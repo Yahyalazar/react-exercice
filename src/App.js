@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {data} from "./data"
+import Home from "./home"
+export default function App(){
+  const showData = data.map((show)=><Home 
+  img= {show.img}
+  title = {show.title}
+  pays = {show.pays}
+  disc = {show.disc}
+  star = {show.star}/>)
+  return(
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "auto auto auto auto",
+      gap:"15px"
+    }}>{showData}</div>
+    )
 }
-
-export default App;
